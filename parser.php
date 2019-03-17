@@ -25,13 +25,30 @@ class Parser
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    
+
     public function getArrOfPictures()
     {
         preg_match_all('#src="[0-9a-z-/=.,?]+"#i', $this->getBody(), $this->pictures);
         return $this->pictures;
     }
 
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function saveToFile()
+    {
+        file_put_contents($_SERVER['DOCUMENT_ROOT'].'pictures.csv', $this->dataForSave());
+        echo 'Path: '. __FILE__ . PHP_EOL. 'Pictures: ' .count($this->getArrOfPictures()[0]);
+    }
+
+    /**
+     * @return string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    private function dataForSave()
+    {
+        return $this->url. PHP_EOL. implode(';', $this->getArrOfPictures()[0]);
+    }
 
     /**
      * @return \Psr\Http\Message\StreamInterface
@@ -62,4 +79,4 @@ class Parser
 }
 
 /** @var string $new */
-var_dump(new Parser($new));
+var_dump((new Parser($new))->saveToFile());
