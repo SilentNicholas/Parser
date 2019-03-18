@@ -1,13 +1,18 @@
 <?php
 require_once './saver.php';
-require_once './backup.php';
 require_once __DIR__. './vendor/autoload.php';
 use GuzzleHttp\Client as Client;
 
+if($argc != 2){
+    die(PHP_EOL . 'Use: php parser.php URL' . PHP_EOL);
+}
+
+$new = $argv[1];
+
 class Parser
 {
-    protected $url;
-    protected $pictures = [];
+    private $url;
+    private $pictures = [];
 
 
     /**
@@ -30,7 +35,7 @@ class Parser
     public function getArrOfPictures()
     {
         preg_match_all('#src="[0-9a-z-/=.,?]+"#i', $this->getBody(), $this->pictures);
-        return $this->pictures;
+        return $this->pictures[0];
     }
 
 
@@ -38,7 +43,7 @@ class Parser
      * @return \Psr\Http\Message\StreamInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    protected function getBody()
+    public function getBody()
     {
         return (new Client)->request('GET', $this->url)->getBody();
     }
@@ -46,7 +51,7 @@ class Parser
     /**
      * @return false|int
      */
-    protected function isCorrectUrl()
+    private function isCorrectUrl()
     {
         return preg_match('#^https?[0-9a-z-=+_/\\\\:,.?]+\.[a-z]{2,3}/?$#i', $this->url);
     }
@@ -54,7 +59,7 @@ class Parser
     /**
      * @throws Exception
      */
-    protected function validate()
+    private function validate()
     {
         if(!$this->isCorrectUrl() === (int)1){
             throw new Exception('Entered URL is not correct!');

@@ -1,41 +1,56 @@
 <?php
-require_once './backup.php';
 require_once  './parser.php';
 require_once __DIR__. './vendor/autoload.php';
 use GuzzleHttp\Client as Client;
 
-class Save extends Parser
+class Save
 {
+    private $url;
+    private $pictures;
     private $file;
+
 
     /**
      * Save constructor.
-     * @param string $url
-     * @throws Exception
+     * @param $url
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function __construct(string $url)
+    public function __construct($url)
     {
-        parent::__construct($url);
-        $this->file = fopen(__DIR__. '\pictures.csv', 'w+');
+        $this->url = $url;
+        $this->pictures = (new Parser($url))->getArrOfPictures();
+        $this->file = fopen( 'pictures.csv', 'w+');
     }
 
+
     /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * Save pictures to the 'pictures.csv'.
      */
     public function saveToFile()
     {
         $this->dataForSave();
-        echo 'Path: '. __DIR__.'\pictures.csv' . PHP_EOL. 'Pictures: ' .count($this->getArrOfPictures()[0]);
+        echo 'Path: '. __DIR__.'\pictures.csv' . PHP_EOL. 'Pictures: ' .count($this->pictures);
         fclose($this->file);
     }
 
+
     /**
      * @return string
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exception
      */
     private function dataForSave()
     {
-        return fwrite($this->file, $this->url. PHP_EOL). fputcsv($this->file, $this->getArrOfPictures()[0]). PHP_EOL;
+        $this->validate();
+        return fwrite($this->file, $this->url. PHP_EOL). fputcsv($this->file, $this->pictures). PHP_EOL;
     }
 
+    /**
+     * @throws Exception
+     */
+    private function validate()
+    {
+        if(count($this->pictures) === 0 ){
+            throw new Exception('Not found pictures for your URL');
+        }
+    }
 }
