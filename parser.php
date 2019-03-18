@@ -1,12 +1,13 @@
 <?php
+require_once './saver.php';
 require_once './backup.php';
 require_once __DIR__. './vendor/autoload.php';
 use GuzzleHttp\Client as Client;
 
 class Parser
 {
-    private $url;
-    private $pictures = [];
+    protected $url;
+    protected $pictures = [];
 
 
     /**
@@ -32,29 +33,12 @@ class Parser
         return $this->pictures;
     }
 
-    /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function saveToFile()
-    {
-        file_put_contents($_SERVER['DOCUMENT_ROOT'].'pictures.csv', $this->dataForSave());
-        echo 'Path: '. __FILE__ . PHP_EOL. 'Pictures: ' .count($this->getArrOfPictures()[0]);
-    }
-
-    /**
-     * @return string
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    private function dataForSave()
-    {
-        return $this->url. PHP_EOL. implode(';', $this->getArrOfPictures()[0]);
-    }
 
     /**
      * @return \Psr\Http\Message\StreamInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    private function getBody()
+    protected function getBody()
     {
         return (new Client)->request('GET', $this->url)->getBody();
     }
@@ -62,7 +46,7 @@ class Parser
     /**
      * @return false|int
      */
-    private function isCorrectUrl()
+    protected function isCorrectUrl()
     {
         return preg_match('#^https?[0-9a-z-=+_/\\\\:,.?]+\.[a-z]{2,3}/?$#i', $this->url);
     }
@@ -70,7 +54,7 @@ class Parser
     /**
      * @throws Exception
      */
-    private function validate()
+    protected function validate()
     {
         if(!$this->isCorrectUrl() === (int)1){
             throw new Exception('Entered URL is not correct!');
@@ -79,4 +63,4 @@ class Parser
 }
 
 /** @var string $new */
-var_dump((new Parser($new))->saveToFile());
+echo (new Save($new))->saveToFile();
