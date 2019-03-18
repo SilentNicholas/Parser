@@ -16,7 +16,7 @@ class Save
      */
     public function __construct(string $url)
     {
-        $this->name = $url. '.csv';
+        $this->name = trim($url. '.csv', '#https?://#i');
         $this->file = fopen( __DIR__. '\\'. $this->name, 'w+');
     }
 

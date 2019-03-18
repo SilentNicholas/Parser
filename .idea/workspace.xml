@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cfe82f6-880d-4282-85d0-3b81d7755b57" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/saver.php" beforeDir="false" afterPath="$PROJECT_DIR$/saver.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -24,20 +22,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+            <state relative-caret-position="590">
+              <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="-90">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -53,8 +51,8 @@
         <option value="$PROJECT_DIR$/save.php" />
         <option value="$PROJECT_DIR$/backup.php" />
         <option value="$PROJECT_DIR$/pictures.csv" />
-        <option value="$PROJECT_DIR$/parser.php" />
         <option value="$PROJECT_DIR$/saver.php" />
+        <option value="$PROJECT_DIR$/parser.php" />
       </list>
     </option>
   </component>
@@ -124,12 +122,12 @@
       <workItem from="1552838693794" duration="6497000" />
       <workItem from="1552885388395" duration="6316000" />
       <workItem from="1552904783734" duration="6059000" />
-      <workItem from="1552916457962" duration="3554000" />
+      <workItem from="1552916457962" duration="4204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22426000" />
+    <option name="totallyTimeSpent" value="23076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -190,17 +188,17 @@
     <entry file="file://$PROJECT_DIR$/pictures.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser.php">
+    <entry file="file://$PROJECT_DIR$/saver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+        <state relative-caret-position="-90">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saver.php">
+    <entry file="file://$PROJECT_DIR$/parser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="590">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
         </state>
       </provider>
     </entry>
