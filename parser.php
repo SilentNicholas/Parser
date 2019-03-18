@@ -67,5 +67,5 @@ class Parser
     }
 }
 
-/** @var string $new */
-echo (new Save($new))->saveToFile();
+$data = (new Parser($new))->getArrOfPictures();
+echo (new Save($new))->setData($data);

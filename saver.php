@@ -5,31 +5,45 @@ use GuzzleHttp\Client as Client;
 
 class Save
 {
-    private $url;
-    private $pictures;
+    private $data;
+    private $name;
     private $file;
 
 
     /**
      * Save constructor.
-     * @param $url
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param string $url
      */
-    public function __construct($url)
+    public function __construct(string $url)
     {
-        $this->url = $url;
-        $this->pictures = (new Parser($url))->getArrOfPictures();
-        $this->file = fopen( 'pictures.csv', 'w+');
+        $this->name = $url. '.csv';
+        $this->file = fopen( __DIR__. '\\'. $this->name, 'w+');
     }
 
+    /**
+     * Array of data to save.
+     */
+    public function getData()
+    {
+        echo'<pre>';
+        print_r($this->data);
+        echo'</pre>';
+    }
 
     /**
-     * Save pictures to the 'pictures.csv'.
+     * @param array $data
+     */
+    public function setData(array $data)
+    {
+        $this->data = $data;
+    }
+    /**
+     * Save data to the file.
      */
     public function saveToFile()
     {
         $this->dataForSave();
-        echo 'Path: '. __DIR__.'\pictures.csv' . PHP_EOL. 'Pictures: ' .count($this->pictures);
+        echo 'Path: '. __DIR__.'\\'. $this->name. PHP_EOL. 'Pictures: ' .count($this->data);
         fclose($this->file);
     }
 
@@ -41,15 +55,16 @@ class Save
     private function dataForSave()
     {
         $this->validate();
-        return fwrite($this->file, $this->url. PHP_EOL). fputcsv($this->file, $this->pictures). PHP_EOL;
+        return fwrite($this->file, $this->name. PHP_EOL). fputcsv($this->file, $this->data). PHP_EOL;
     }
+
 
     /**
      * @throws Exception
      */
     private function validate()
     {
-        if(count($this->pictures) === 0 ){
+        if(count($this->data) === 0 ){
             throw new Exception('Not found pictures for your URL');
         }
     }

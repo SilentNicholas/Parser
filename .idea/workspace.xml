@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9cfe82f6-880d-4282-85d0-3b81d7755b57" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backup.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/saver.php" beforeDir="false" afterPath="$PROJECT_DIR$/saver.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -24,20 +24,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="556">
-              <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+              <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/saver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="323">
+              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -52,8 +52,8 @@
       <list>
         <option value="$PROJECT_DIR$/save.php" />
         <option value="$PROJECT_DIR$/backup.php" />
-        <option value="$PROJECT_DIR$/parser.php" />
         <option value="$PROJECT_DIR$/pictures.csv" />
+        <option value="$PROJECT_DIR$/parser.php" />
         <option value="$PROJECT_DIR$/saver.php" />
       </list>
     </option>
@@ -80,6 +80,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -91,7 +92,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -123,19 +123,20 @@
       <updated>1552838677359</updated>
       <workItem from="1552838693794" duration="6497000" />
       <workItem from="1552885388395" duration="6316000" />
-      <workItem from="1552904783734" duration="5715000" />
+      <workItem from="1552904783734" duration="6059000" />
+      <workItem from="1552916457962" duration="3554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18528000" />
+    <option name="totallyTimeSpent" value="22426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21073826" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21342282" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -185,27 +186,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/save.php" />
     <entry file="file://$PROJECT_DIR$/saver.phppictures.csv" />
-    <entry file="file://$PROJECT_DIR$/backup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/backup.php" />
     <entry file="file://$PROJECT_DIR$/pictures.csv">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
-          <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
